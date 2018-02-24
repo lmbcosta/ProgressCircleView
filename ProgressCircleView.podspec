@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
 # 1
 s.platform = :ios
-s.ios.deployment_target = '8.0'
+s.ios.deployment_target = '9.0'
 s.name = "ProgressCircleView"
 s.summary = "A Customizable progress circle bar"
 s.requires_arc = true

@@ -10,7 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Requirements
 * ARC
-* iOS8
+* iOS 9
 
 
 ### Installation
