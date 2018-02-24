@@ -19,7 +19,7 @@ pod 'ProgressCircleView', :git => 'https://github.com/lmbcosta/ProgressCircleVie
 
 ## Usage
 
-Simply import and it+s ready to go!
+Simply import and it's ready to go!
  
  ```Swift
 import ProgressCircleView
