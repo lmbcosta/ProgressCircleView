@@ -69,7 +69,7 @@ public class ProgressCircleView: UIView {
         get { return _endPercentage }
     }
 
-// Only available clockwise for now
+// TODO: Only available clockwise
 //    @IBInspectable
 //    open var clockwise: Bool {
 //        set { _clockwise = clockwise }
