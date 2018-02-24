@@ -14,6 +14,8 @@
 		49F2F5672041CC75001C6617 /* ProgressCircleView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProgressCircleView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F2F56A2041CC75001C6617 /* ProgressCircleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressCircleView.h; sourceTree = "<group>"; };
 		49F2F56B2041CC75001C6617 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49F2F5732041CD04001C6617 /* CountingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountingLabel.swift; sourceTree = "<group>"; };
+		49F2F5742041CD2B001C6617 /* ProgressCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +48,20 @@
 		49F2F5692041CC75001C6617 /* ProgressCircleView */ = {
 			isa = PBXGroup;
 			children = (
+				49F2F5722041CCD8001C6617 /* Views */,
 				49F2F56A2041CC75001C6617 /* ProgressCircleView.h */,
 				49F2F56B2041CC75001C6617 /* Info.plist */,
 			);
 			path = ProgressCircleView;
+			sourceTree = "<group>";
+		};
+		49F2F5722041CCD8001C6617 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				49F2F5732041CD04001C6617 /* CountingLabel.swift */,
+				49F2F5742041CD2B001C6617 /* ProgressCircleView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,6 +107,7 @@
 				TargetAttributes = {
 					49F2F5662041CC75001C6617 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -253,6 +266,7 @@
 		49F2F5702041CC75001C6617 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -266,6 +280,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lmbcosta.ProgressCircleView;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -274,6 +289,7 @@
 		49F2F5712041CC75001C6617 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
