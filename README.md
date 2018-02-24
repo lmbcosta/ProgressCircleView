@@ -22,8 +22,7 @@ pod 'ProgressCircleView', :git => 'https://github.com/lmbcosta/ProgressCircleVie
 Simply import and it+s ready to go!
  
  ```Swift
- import UIKit
- import ProgressCircleView
+import ProgressCircleView
 
 class ViewController: UIViewController {
     
