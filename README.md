@@ -3,11 +3,6 @@
 A Customizable progress circle bar with percentage label
 
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-
 ## Requirements
 * ARC
 * iOS 8.2
@@ -27,14 +22,12 @@ pod 'ProgressCircleView', :git => 'https://github.com/lmbcosta/ProgressCircleVie
 Simply import and it's ready to go!
  
  ```Swift
- import UIKit
- import ProgressCircleView
+import ProgressCircleView
 
 class ViewController: UIViewController {
     
     // UI
     @IBOutlet weak var myCircle: ProgressCircleView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
