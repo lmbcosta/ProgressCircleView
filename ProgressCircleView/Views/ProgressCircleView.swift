@@ -8,12 +8,20 @@
 
 import UIKit
 
-typealias AnimationTypeLabel = CountingLabel.CounterAnimationType
-typealias CounterTypeLabel = CountingLabel.CounterType
-
-@available(iOS 8.2, *)
 @IBDesignable
+@available(iOS 8.2, *)
 public class ProgressCircleView: UIView {
+    
+    public enum LabelTypeAnimation {
+        case linear
+        case easeIn
+        case easeOut
+    }
+    
+    public enum LabelCounterType {
+        case int
+        case float
+    }
     
     fileprivate var _startPercentage: CGFloat = 0
     fileprivate var _endPercentage: CGFloat = 75
@@ -25,8 +33,6 @@ public class ProgressCircleView: UIView {
     fileprivate var _strokeLineWidth: CGFloat = 20
     fileprivate var _labelSize: CGSize = CGSize(width: 200, height: 200)
     fileprivate var _labelFont: UIFont = UIFont.systemFont(ofSize: 80, weight: .medium)
-    fileprivate var _animationTypeLabel: AnimationTypeLabel = .linear
-    fileprivate var _counterTypeLabel: CounterTypeLabel = .int
     
     // Constructors
     override init(frame: CGRect) {
@@ -69,13 +75,13 @@ public class ProgressCircleView: UIView {
         set { _endPercentage = newValue }
         get { return _endPercentage }
     }
-
-// TODO: Only available clockwise
-//    @IBInspectable
-//    open var clockwise: Bool {
-//        set { _clockwise = clockwise }
-//        get { return _clockwise }
-//    }
+    
+    // TODO: Only available clockwise
+    //    @IBInspectable
+    //    open var clockwise: Bool {
+    //        set { _clockwise = clockwise }
+    //        get { return _clockwise }
+    //    }
     
     @IBInspectable
     open var radius: CGFloat {
@@ -103,13 +109,13 @@ public class ProgressCircleView: UIView {
         set { _label.text = newValue}
         get { return _label.text }
     }
-
+    
     @IBInspectable
     open var labelTextAlignment: NSTextAlignment {
         set { _label.textAlignment = newValue  }
         get { return _label.textAlignment }
     }
-
+    
     @IBInspectable
     open var labelTextColor: UIColor {
         set { _label.textColor = newValue }
@@ -126,22 +132,22 @@ public class ProgressCircleView: UIView {
 // MARK: - Private Functions
 @available(iOS 8.2, *)
 extension ProgressCircleView {
+    
     fileprivate func setupView() {
         self._radius = frame.width/2
         self._label.textAlignment = .center
         self._label.textColor = strokeColor
         self._label.frame = CGRect(x: 0, y: 0, width: 200, height: 100)
-        self._label.font = UIFont.systemFont(ofSize: 80, weight: .medium)
         self._label.textColor = strokeColor
         self._label.center = self.center
         self.addSubview(_label)
     }
 }
 
-// MARK: - Public Functions
+// MARK: - Private Functions
 @available(iOS 8.2, *)
 extension ProgressCircleView {
-    func animate(duration: CFTimeInterval, animated: Bool, animationType: AnimationTypeLabel?, counter: CounterTypeLabel?) {
+    public func animate(duration: CFTimeInterval, animated: Bool, animationType: LabelTypeAnimation, counter: LabelCounterType) {
         
         let centerView = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
         
@@ -180,13 +186,37 @@ extension ProgressCircleView {
             contourLayer.lineCap = kCALineCapRound
             contourLayer.add(strokeAnimation, forKey: "strokeAnimation")
             
-            let counter = counter ?? _counterTypeLabel
-            let typeAnimation = animationType ?? _animationTypeLabel
+            var animationTypeLabel: CountingLabel.CounterAnimationType!
+            switch animationType {
+            case .easeIn:
+                animationTypeLabel = .easeIn
+                break
+                
+            case .easeOut:
+                animationTypeLabel = .easeOut
+                break
+                
+            case .linear:
+                animationTypeLabel = .linear
+                break
+            }
             
-            _label.count(fromValue: Float(startPercentage), to: Float(endPercentage) - Float(startPercentage), withDuration: duration, animationType: typeAnimation, counterType: counter)
+            var counterLabel: CountingLabel.CounterType
+            switch counter {
+            case .float:
+                counterLabel = .float
+                break
+                
+            case .int:
+                counterLabel = .int
+                break
+            }
+            
+            _label.count(fromValue: Float(startPercentage), to: Float(endPercentage) - Float(startPercentage), withDuration: duration, animationType: animationTypeLabel, counterType: counterLabel)
         } else {
             _label.text = "\(Int(endPercentage - startPercentage))%"
         }
     }
     
 }
+
