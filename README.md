@@ -10,7 +10,7 @@ A Customizable progress circle bar with percentage label
 
 ### Installation
 
-ProgressCircleView is available through [CocoaPods](https://cocoapods.org)
+ProgressCircleView is available through [CocoaPods](https://cocoapods.org)<br/>
 Simply add the following line in your Podfile:
 ```ruby
 pod 'ProgressCircleView', :git => 'https://github.com/lmbcosta/ProgressCircleView.git'
@@ -19,7 +19,7 @@ pod 'ProgressCircleView', :git => 'https://github.com/lmbcosta/ProgressCircleVie
 
 ## Usage
 
-Simply import and it's ready to go!
+Import ProgressCircleView and you're ready to go!
  
  ```Swift
 import ProgressCircleView
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
 
 ## Authors
 
-Luís Costa - lmbcosta@hotmail.com<br />
+Luís Costa - lmbcosta@hotmail.com<br/>
 See also [Brian Advent Youtube Channel](https://www.youtube.com/channel/UCysEngjfeIYapEER9K8aikw) where he shares how to create a counting label.
 
 ## License
