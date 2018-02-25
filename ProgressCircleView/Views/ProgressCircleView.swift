@@ -11,6 +11,7 @@ import UIKit
 typealias AnimationTypeLabel = CountingLabel.CounterAnimationType
 typealias CounterTypeLabel = CountingLabel.CounterType
 
+@available(iOS 8.2, *)
 @IBDesignable
 public class ProgressCircleView: UIView {
     
@@ -123,8 +124,8 @@ public class ProgressCircleView: UIView {
 }
 
 // MARK: - Private Functions
+@available(iOS 8.2, *)
 extension ProgressCircleView {
-    
     fileprivate func setupView() {
         self._radius = frame.width/2
         self._label.textAlignment = .center
@@ -137,7 +138,8 @@ extension ProgressCircleView {
     }
 }
 
-// MARK: - Private Functions
+// MARK: - Public Functions
+@available(iOS 8.2, *)
 extension ProgressCircleView {
     func animate(duration: CFTimeInterval, animated: Bool, animationType: AnimationTypeLabel?, counter: CounterTypeLabel?) {
         

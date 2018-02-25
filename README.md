@@ -10,13 +10,13 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Requirements
 * ARC
-* iOS 9
+* iOS 8.2
 
 
 ### Installation
 
 ProgressCircleView is available through [CocoaPods](https://cocoapods.org)
-Simply add the follow line in your Podfile:
+Simply add the following line in your Podfile:
 ```ruby
 pod 'ProgressCircleView', :git => 'https://github.com/lmbcosta/ProgressCircleView.git'
 ```
@@ -24,7 +24,7 @@ pod 'ProgressCircleView', :git => 'https://github.com/lmbcosta/ProgressCircleVie
 
 ## Usage
 
-Simply import and it+s ready to go!
+Simply import and it's ready to go!
  
  ```Swift
  import UIKit
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
 ## Authors
 
 Luís Costa - lmbcosta@hotmail.com<br />
-See also Brian Advent Youtube Channel (https://www.youtube.com/channel/UCysEngjfeIYapEER9K8aikw) where he shares how to create a counting label.
+See also [Brian Advent Youtube Channel](https://www.youtube.com/channel/UCysEngjfeIYapEER9K8aikw) where he shares how to create a counting label.
 
 ## License
 
